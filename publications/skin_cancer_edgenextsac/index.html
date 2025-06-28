@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Hybrid Ensemble of Segmentation-Assisted Classification and GBDT for Skin Cancer Detection using 3D-TBP images and synthetic lesion augmentation.">
+  <meta name="keywords" content="Skin Cancer Detection, Deep Learning, Computer Vision, Medical AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hybrid Ensemble of Segmentation-Assisted Classification and GBDT for Skin Cancer Detection</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="#">
+            Placeholder Project 1
+          </a>
+          <a class="navbar-item" href="#">
+            Placeholder Project 2
+          </a>
+          <a class="navbar-item" href="#">
+            Placeholder Project 3
+          </a>
+          <a class="navbar-item" href="#">
+            Placeholder Project 4
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Hybrid Ensemble of Segmentation-Assisted Classification and GBDT for Skin Cancer Detection</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Fahmida Yasmin Rifat</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Independent Researcher,</span>
+            <span class="author-block"><sup>2</sup>Placeholder Institution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2506.03420"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2506.03420"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="Skin Cancer Detection Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Hybrid Ensemble</span> approach combining vision transformers and GBDT for 
+        accurate skin cancer detection using 3D-TBP images.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="./static/images/interpolate_start.jpg" alt="Skin Cancer Detection Result 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="./static/images/interpolate_end.jpg" alt="Skin Cancer Detection Result 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="./static/images/interpolate_start.jpg" alt="Skin Cancer Detection Result 3" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="./static/images/interpolate_end.jpg" alt="Skin Cancer Detection Result 4" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-blueshirt">
+          <img src="./static/images/interpolate_start.jpg" alt="Skin Cancer Detection Result 5" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-mask">
+          <img src="./static/images/interpolate_end.jpg" alt="Skin Cancer Detection Result 6" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-coffee">
+          <img src="./static/images/interpolate_start.jpg" alt="Skin Cancer Detection Result 7" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-toby">
+          <img src="./static/images/interpolate_end.jpg" alt="Skin Cancer Detection Result 8" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Skin cancer is among the most prevalent and life-threatening diseases worldwide, with early detection being critical to patient outcomes. This work presents a hybrid machine and deep learning-based approach for classifying malignant and benign skin lesions using the SLICE-3D dataset from ISIC 2024, which comprises 401,059 cropped lesion images extracted from 3D Total Body Photography (TBP), emulating non-dermoscopic, smartphone-like conditions.
+          </p>
+          <p>
+            Our method combines vision transformers (EVA02) and our designed convolutional ViT hybrid (EdgeNeXtSAC) to extract robust features, employing a segmentation-assisted classification pipeline to enhance lesion localization. Predictions from these models are fused with a gradient-boosted decision tree (GBDT) ensemble enriched by engineered features and patient-specific relational metrics.
+          </p>
+          <p>
+            To address class imbalance and improve generalization, we augment malignant cases with Stable Diffusion-generated synthetic lesions and apply a diagnosis-informed relabeling strategy to harmonize external datasets into a 3-class format. Using partial AUC (pAUC) above 80 percent true positive rate (TPR) as the evaluation metric, our approach achieves a pAUC of 0.1755 -- the highest among all configurations. These results underscore the potential of hybrid, interpretable AI systems for skin cancer triage in telemedicine and resource-constrained settings.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/placeholder"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Methodology. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Methodology</h2>
+          <p>
+            Our hybrid approach combines the power of vision transformers with traditional machine learning techniques. The segmentation-assisted classification pipeline enhances lesion localization while the GBDT ensemble provides interpretable predictions.
+          </p>
+          <img src="./static/images/interpolate_start.jpg" alt="Methodology Overview" style="width: 100%; height: auto;">
+        </div>
+      </div>
+      <!--/ Methodology. -->
+
+      <!-- Results. -->
+      <div class="column">
+        <h2 class="title is-3">Results</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              Our approach achieves superior performance with a pAUC of 0.1755, outperforming all baseline configurations. The hybrid ensemble demonstrates robust generalization across different lesion types and imaging conditions.
+            </p>
+            <img src="./static/images/interpolate_end.jpg" alt="Results Comparison" style="width: 100%; height: auto;">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Results. -->
+
+    <!-- Technical Details. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Technical Details</h2>
+
+        <!-- Model Architecture. -->
+        <h3 class="title is-4">Model Architecture</h3>
+        <div class="content has-text-justified">
+          <p>
+            The EdgeNeXtSAC architecture combines the benefits of both convolutional neural networks and vision transformers, providing robust feature extraction for skin lesion analysis. The segmentation-assisted classification pipeline enhances the model's ability to focus on relevant lesion regions.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Input lesion image."/>
+            <p>Input Image</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              <img src="./static/images/interpolate_end.jpg" alt="Segmentation Result" style="width: 100%; height: auto;">
+            </div>
+            <p class="has-text-centered">Segmentation-Assisted Classification</p>
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Final prediction."/>
+            <p class="is-bold">Prediction</p>
+          </div>
+        </div>
+        <br/>
+        <!--/ Model Architecture. -->
+
+        <!-- Synthetic Augmentation. -->
+        <h3 class="title is-4">Synthetic Lesion Augmentation</h3>
+        <div class="content has-text-justified">
+          <p>
+            To address class imbalance, we employ Stable Diffusion to generate synthetic malignant lesions, improving the model's ability to generalize to rare cancer types while maintaining realistic lesion characteristics.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/interpolate_start.jpg"
+               alt="Synthetic Lesion Examples"
+               style="width: 75%; height: auto;">
+        </div>
+        <!--/ Synthetic Augmentation. -->
+
+      </div>
+    </div>
+    <!--/ Technical Details. -->
+
+
+    <!-- Related Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Work</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Our work builds upon recent advances in skin cancer detection and computer vision.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2506.03420">ISIC 2024 Challenge</a> provides the SLICE-3D dataset and evaluation framework for non-dermoscopic skin cancer detection.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2204.07632">EVA02</a> and <a href="https://arxiv.org/abs/2206.10589">EdgeNeXt</a> serve as the foundation for our vision transformer and hybrid architecture respectively.
+          </p>
+          <p>
+            Recent works on <a href="#">synthetic medical image generation</a> and <a href="#">ensemble methods in medical AI</a> have influenced our approach to data augmentation and model fusion.
+          </p>
+          <p>
+            For a comprehensive overview of skin cancer detection methods, see <a href="#">recent surveys</a> on deep learning in dermatology and <a href="#">medical image analysis</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Related Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{hasan2025hybridensemblesegmentationassistedclassification,
+  title={Hybrid Ensemble of Segmentation-Assisted Classification and GBDT for Skin Cancer Detection with Engineered Metadata and Synthetic Lesions from ISIC 2024 Non-Dermoscopic 3D-TBP Images},
+  author={Muhammad Zubair Hasan and Fahmida Yasmin Rifat},
+  year={2025},
+  eprint={2506.03420},
+  archivePrefix={arXiv},
+  primaryClass={eess.IV},
+  url={https://arxiv.org/abs/2506.03420},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2506.03420">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/zubair-hasan" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

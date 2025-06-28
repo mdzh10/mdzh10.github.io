@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="IoT Based Automated Entry System for Covid-19 Symptom Detection - Raspberry Pi system with multiple sensors.">
+  <meta name="keywords" content="IoT, Raspberry Pi, Covid-19, Mask Detection, Temperature Sensor, SPO2 Sensor, Computer Vision">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IoT Based Automated Entry System for Covid-19 Symptom Detection</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Projects
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../finbot_ai_chatbot/">
+            FinBot AI Chatbot
+          </a>
+          <a class="navbar-item" href="../bangla_book_reader/">
+            Bangla Book Reader System
+          </a>
+          <a class="navbar-item" href="../android_malware_detection/">
+            Android Malware Detection
+          </a>
+          <a class="navbar-item" href="../image_compression_watermarking/">
+            Image Compression Tool
+          </a>
+          <a class="navbar-item" href="../../industry/celloscope_e_kyc/">
+            Celloscope E-KYC Pipeline
+          </a>
+          <a class="navbar-item" href="../../industry/kona_recommendation/">
+            Kona Recommendation System
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">IoT Based Automated Entry System for Covid-19 Symptom Detection</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Personal Project</span>
+            <span class="author-block">Nov 2021 - Dec 2021</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Project Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-project-diagram"></i>
+                  </span>
+                  <span>Project Details</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-play"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="IoT Covid Detection Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Multi-Sensor IoT System</span> for automated Covid-19 symptom detection with 
+        three levels of risk assessment using Raspberry Pi and Firebase database.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="../../images/zubair.jpg" alt="IoT System Setup 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="../../images/zubair.jpg" alt="IoT System Setup 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="../../images/zubair.jpg" alt="Mask Detection Results 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="../../images/zubair.jpg" alt="Mask Detection Results 2" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Project Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Project Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This IoT-based system provides automated entry control with comprehensive Covid-19 symptom detection. 
+            The system integrates multiple sensors and computer vision to create a three-level risk assessment 
+            system for entry validation during the pandemic.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Project Overview. -->
+
+    <!-- System Components. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">System Components</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Entry & Authentication System</h3>
+          <ul>
+            <li><strong>RFID RC522 Sensor:</strong> Contactless entry and login mechanics</li>
+            <li><strong>User Identification:</strong> Automated user recognition and authentication</li>
+            <li><strong>Access Control:</strong> Entry permission based on health assessment</li>
+          </ul>
+
+          <h3 class="title is-4">2. Mask Detection System</h3>
+          <ul>
+            <li><strong>Camera Integration:</strong> Real-time video feed for face analysis</li>
+            <li><strong>ResNet-50 Model:</strong> Pre-trained model fine-tuned on facial mask dataset</li>
+            <li><strong>99% Accuracy:</strong> High precision mask detection</li>
+            <li><strong>Real-time Processing:</strong> Instant mask detection results</li>
+          </ul>
+
+          <h3 class="title is-4">3. Health Monitoring Sensors</h3>
+          <ul>
+            <li><strong>MLX90614 Temperature Sensor:</strong> Non-contact body temperature measurement</li>
+            <li><strong>MAX30100 SPO2 Sensor:</strong> Blood oxygen saturation monitoring</li>
+            <li><strong>Vital Signs Analysis:</strong> Comprehensive health parameter assessment</li>
+          </ul>
+
+          <h3 class="title is-4">4. Data Management</h3>
+          <ul>
+            <li><strong>Firebase Database:</strong> Cloud-based data storage and management</li>
+            <li><strong>User Records:</strong> Comprehensive health and access logs</li>
+            <li><strong>Real-time Updates:</strong> Instant data synchronization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ System Components. -->
+
+    <!-- Risk Assessment System. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Three-Level Risk Assessment</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Level 1: Low Risk</h3>
+          <ul>
+            <li>Proper mask usage detected</li>
+            <li>Normal body temperature (below 37.5°C)</li>
+            <li>Normal oxygen saturation (above 95%)</li>
+            <li>Granted entry with monitoring</li>
+          </ul>
+
+          <h3 class="title is-4">Level 2: Medium Risk</h3>
+          <ul>
+            <li>Mask not properly worn or missing</li>
+            <li>Slightly elevated temperature (37.5°C - 38°C)</li>
+            <li>Borderline oxygen levels (90-95%)</li>
+            <li>Entry with additional screening required</li>
+          </ul>
+
+          <h3 class="title is-4">Level 3: High Risk</h3>
+          <ul>
+            <li>No mask detected</li>
+            <li>High fever (above 38°C)</li>
+            <li>Low oxygen saturation (below 90%)</li>
+            <li>Entry denied, medical attention required</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Risk Assessment System. -->
+
+    <!-- Technical Implementation. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technical Implementation</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Raspberry Pi Integration</h3>
+          <ul>
+            <li><strong>Central Controller:</strong> Raspberry Pi as the main processing unit</li>
+            <li><strong>Sensor Communication:</strong> I2C and SPI protocols for sensor interfacing</li>
+            <li><strong>Real-time Processing:</strong> Efficient handling of multiple data streams</li>
+            <li><strong>Power Management:</strong> Optimized power consumption for continuous operation</li>
+          </ul>
+
+          <h3 class="title is-4">2. Computer Vision Pipeline</h3>
+          <ul>
+            <li><strong>Image Preprocessing:</strong> Face detection and region extraction</li>
+            <li><strong>Model Fine-tuning:</strong> ResNet-50 adapted for mask detection</li>
+            <li><strong>Inference Optimization:</strong> Fast real-time mask classification</li>
+            <li><strong>Accuracy Validation:</strong> Comprehensive testing and validation</li>
+          </ul>
+
+          <h3 class="title is-4">3. Automated Workflow</h3>
+          <ul>
+            <li><strong>Sequential Processing:</strong> RFID → Mask → Temperature → SPO2</li>
+            <li><strong>Error Handling:</strong> Robust error detection and recovery</li>
+            <li><strong>User Feedback:</strong> Clear status indicators and notifications</li>
+            <li><strong>Data Logging:</strong> Complete audit trail of all assessments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technical Implementation. -->
+
+    <!-- Results & Performance. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results & Performance</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>99% Mask Detection Accuracy:</strong> Highly reliable face mask recognition</li>
+            <li><strong>Multi-Sensor Integration:</strong> Seamless coordination of all sensors</li>
+            <li><strong>Real-time Processing:</strong> Instant health assessment results</li>
+            <li><strong>Automated Decision Making:</strong> Objective risk-based entry control</li>
+            <li><strong>Comprehensive Data Management:</strong> Complete health and access records</li>
+            <li><strong>Scalable Architecture:</strong> Easy deployment in multiple locations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Results & Performance. -->
+
+    <!-- Technologies Used. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technologies & Skills</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>IoT Development:</strong> Raspberry Pi, Sensor integration, GPIO programming</li>
+            <li><strong>Computer Vision:</strong> OpenCV, ResNet-50, Face detection, Mask classification</li>
+            <li><strong>Hardware Programming:</strong> Arduino, I2C/SPI communication, Sensor interfacing</li>
+            <li><strong>Cloud Database:</strong> Firebase, Real-time data synchronization</li>
+            <li><strong>System Integration:</strong> Multi-sensor coordination, Automated workflows</li>
+            <li><strong>Python Programming:</strong> IoT applications, Computer vision, Data processing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technologies Used. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://zubair-hasan.github.io">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/mdzh10" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html> 

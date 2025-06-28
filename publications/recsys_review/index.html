@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Exploring Challenges and Innovations in E-Commerce Recommendation Systems: A Comprehensive Review addressing cold-start problems, sparse datasets, and deep learning integration.">
+  <meta name="keywords" content="Recommendation Systems, E-Commerce, Machine Learning, Deep Learning, Cold-Start Problem">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exploring Challenges and Innovations in E-Commerce Recommendation Systems: A Comprehensive Review</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../skin_cancer_edgenextsac/">
+            Skin Cancer Detection
+          </a>
+          <a class="navbar-item" href="#">
+            Placeholder Project 2
+          </a>
+          <a class="navbar-item" href="#">
+            Placeholder Project 3
+          </a>
+          <a class="navbar-item" href="#">
+            Placeholder Project 4
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Exploring Challenges and Innovations in E-Commerce Recommendation Systems: A Comprehensive Review</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Mashfiqur Rahman</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Samiul Mushfik</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="#">Makhdum Ahsan Rupak</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a href="#">Minhaz Bin Farukee</a><sup>5</sup>,</span>
+            <span class="author-block">
+              <a href="#">Shawrup Kumer Suter</a><sup>6</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Vanguard Australia, Melbourne, Australia</span>
+            <span class="author-block"><sup>2</sup>Stibo DX, Dhaka, Bangladesh</span>
+            <span class="author-block"><sup>3</sup>Kona Software Lab Ltd, Dhaka, Bangladesh</span>
+            <span class="author-block"><sup>4</sup>Celloscope, Dhaka, Bangladesh</span>
+            <span class="author-block"><sup>5</sup>ACI Ltd, Dhaka, Bangladesh</span>
+            <span class="author-block"><sup>6</sup>Delivery Hero, Berlin, Germany</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://link.springer.com/chapter/10.1007/978-981-99-9040-5_8"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://link.springer.com/chapter/10.1007/978-981-99-9040-5_8"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Springer</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="E-Commerce Recommendation Systems Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Comprehensive Review</span> of e-commerce recommendation systems addressing 
+        challenges and innovative approaches in the digital marketplace.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="./static/images/interpolate_start.jpg" alt="Recommendation System Result 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="./static/images/interpolate_end.jpg" alt="Recommendation System Result 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="./static/images/interpolate_start.jpg" alt="Recommendation System Result 3" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="./static/images/interpolate_end.jpg" alt="Recommendation System Result 4" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-blueshirt">
+          <img src="./static/images/interpolate_start.jpg" alt="Recommendation System Result 5" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-mask">
+          <img src="./static/images/interpolate_end.jpg" alt="Recommendation System Result 6" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-coffee">
+          <img src="./static/images/interpolate_start.jpg" alt="Recommendation System Result 7" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-toby">
+          <img src="./static/images/interpolate_end.jpg" alt="Recommendation System Result 8" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recommendation systems play a pivotal role in the digital age, with ongoing research focused on enhancing their effectiveness. This paper delves into the common challenges associated with developing these systems, including the cold-start problem, handling sparse datasets, and the use of matrix filling in hierarchical methods.
+          </p>
+          <p>
+            We explore innovative approaches that include the integration of diverse algorithms and the application of alternative techniques, such as deep learning. Our research aims to establish an empirically based standard for various aspects of recommendation systems, thereby serving as a valuable reference for future studies.
+          </p>
+          <p>
+            The comprehensive review addresses key challenges in e-commerce recommendation systems, including collaborative filtering limitations, content-based filtering approaches, and hybrid methods that combine multiple techniques for improved performance and user experience.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/placeholder"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Methodology. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Methodology</h2>
+          <p>
+            Our comprehensive review methodology encompasses systematic analysis of existing recommendation system approaches, evaluation of their effectiveness in e-commerce contexts, and identification of innovative solutions to common challenges.
+          </p>
+          <img src="./static/images/interpolate_start.jpg" alt="Methodology Overview" style="width: 100%; height: auto;">
+        </div>
+      </div>
+      <!--/ Methodology. -->
+
+      <!-- Results. -->
+      <div class="column">
+        <h2 class="title is-3">Key Findings</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              Our analysis reveals critical insights into recommendation system performance, highlighting the importance of addressing cold-start problems and the effectiveness of hybrid approaches in e-commerce applications.
+            </p>
+            <img src="./static/images/interpolate_end.jpg" alt="Results Comparison" style="width: 100%; height: auto;">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Results. -->
+
+    <!-- Technical Details. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Technical Details</h2>
+
+        <!-- System Architecture. -->
+        <h3 class="title is-4">System Architecture</h3>
+        <div class="content has-text-justified">
+          <p>
+            The review covers various recommendation system architectures including collaborative filtering, content-based filtering, and hybrid approaches, analyzing their strengths and limitations in e-commerce environments.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Input data."/>
+            <p>Input Data</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              <img src="./static/images/interpolate_end.jpg" alt="Processing Pipeline" style="width: 100%; height: auto;">
+            </div>
+            <p class="has-text-centered">Recommendation Pipeline</p>
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Final recommendations."/>
+            <p class="is-bold">Recommendations</p>
+          </div>
+        </div>
+        <br/>
+        <!--/ System Architecture. -->
+
+        <!-- Challenges Addressed. -->
+        <h3 class="title is-4">Challenges Addressed</h3>
+        <div class="content has-text-justified">
+          <p>
+            The review systematically addresses key challenges including cold-start problems, data sparsity, scalability issues, and the need for real-time recommendations in dynamic e-commerce environments.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <img src="./static/images/interpolate_start.jpg"
+               alt="Challenges Overview"
+               style="width: 75%; height: auto;">
+        </div>
+        <!--/ Challenges Addressed. -->
+
+      </div>
+    </div>
+    <!--/ Technical Details. -->
+
+
+    <!-- Related Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Work</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Our work builds upon extensive research in recommendation systems and e-commerce applications.
+          </p>
+          <p>
+            <a href="https://link.springer.com/chapter/10.1007/978-981-99-9040-5_8">Fourth Congress on Intelligent Systems (CIS 2023)</a> provides the conference framework and peer review process for our comprehensive review.
+          </p>
+          <p>
+            <a href="https://link.springer.com/book/10.1007/978-981-99-9039-9">Lecture Notes in Networks and Systems</a> serves as the publication venue for our research contributions.
+          </p>
+          <p>
+            Recent works on <a href="#">collaborative filtering</a> and <a href="#">content-based recommendation systems</a> have influenced our comprehensive analysis approach.
+          </p>
+          <p>
+            For a comprehensive overview of recommendation systems, see <a href="#">recent surveys</a> on machine learning in e-commerce and <a href="#">recommendation algorithms</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Related Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{rahman2024exploring,
+  title={Exploring Challenges and Innovations in E-Commerce Recommendation Systems: A Comprehensive Review},
+  author={Rahman, Mashfiqur and Mushfik, Samiul and Rupak, Makhdum Ahsan and Hasan, Muhammad Zubair and Farukee, Minhaz Bin and Suter, Shawrup Kumer},
+  booktitle={Fourth Congress on Intelligent Systems (CIS 2023)},
+  series={Lecture Notes in Networks and Systems},
+  volume={869},
+  pages={123--130},
+  year={2024},
+  publisher={Springer},
+  doi={10.1007/978-981-99-9040-5_8},
+  url={https://link.springer.com/chapter/10.1007/978-981-99-9040-5_8}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://link.springer.com/chapter/10.1007/978-981-99-9040-5_8">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/zubair-hasan" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html> 

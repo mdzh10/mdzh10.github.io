@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="2D Pose Detection from a Video - Computer vision project using mmpose and mmdet APIs with multi-threading for concurrent video processing.">
+  <meta name="keywords" content="Computer Vision, Pose Detection, mmpose, mmdet, Multi-threading, Python">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2D Pose Detection from a Video</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Projects
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../finbot_ai_chatbot/">
+            FinBot AI Chatbot
+          </a>
+          <a class="navbar-item" href="../bangla_book_reader/">
+            Bangla Book Reader System
+          </a>
+          <a class="navbar-item" href="../android_malware_detection/">
+            Android Malware Detection
+          </a>
+          <a class="navbar-item" href="../iot_covid_detection/">
+            IoT Covid Detection System
+          </a>
+          <a class="navbar-item" href="../image_compression_watermarking/">
+            Image Compression Tool
+          </a>
+          <a class="navbar-item" href="../social_website_mentally_challenged/">
+            Social Website for Mentally Challenged
+          </a>
+          <a class="navbar-item" href="../mobile_rental_plan_detection/">
+            Mobile Rental Plan Detection
+          </a>
+          <a class="navbar-item" href="../national_disaster_management/">
+            National Disaster Management
+          </a>
+          <a class="navbar-item" href="../among_us_3d_animation/">
+            Among Us 3D Animation
+          </a>
+          <a class="navbar-item" href="../../industry/celloscope_e_kyc/">
+            Celloscope E-KYC Pipeline
+          </a>
+          <a class="navbar-item" href="../../industry/kona_recommendation/">
+            Kona Recommendation System
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">2D Pose Detection from a Video</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Personal Project</span>
+            <span class="author-block">December 2021</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Project Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-project-diagram"></i>
+                  </span>
+                  <span>Project Details</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/mdzh10/Pose-Detection-From-VIds"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-play"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="2D Pose Detection Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Computer Vision Project</span> for 2D human pose detection from multiple videos using 
+        mmpose and mmdet APIs with Python multi-threading for concurrent processing.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="../../images/zubair.jpg" alt="Pose Detection Results 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="../../images/zubair.jpg" alt="Pose Detection Results 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="../../images/zubair.jpg" alt="Multi-threading Process 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="../../images/zubair.jpg" alt="Multi-threading Process 2" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Project Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Project Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This computer vision project focuses on detecting 2D human poses from multiple video sources using 
+            state-of-the-art pose detection APIs. The project implements Python multi-threading to process 
+            multiple videos concurrently, significantly improving processing efficiency.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Project Overview. -->
+
+    <!-- Technical Implementation. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technical Implementation</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Pose Detection Pipeline</h3>
+          <ul>
+            <li><strong>mmpose API:</strong> Advanced pose estimation using OpenMMLab's mmpose framework</li>
+            <li><strong>mmdet API:</strong> Object detection for human localization in video frames</li>
+            <li><strong>2D Pose Estimation:</strong> Accurate detection of human keypoints and joints</li>
+            <li><strong>Real-time Processing:</strong> Efficient frame-by-frame pose analysis</li>
+          </ul>
+
+          <h3 class="title is-4">2. Multi-threading Architecture</h3>
+          <ul>
+            <li><strong>Concurrent Processing:</strong> Simultaneous processing of 4 video streams</li>
+            <li><strong>Thread Management:</strong> Efficient thread allocation and synchronization</li>
+            <li><strong>Frame Extraction:</strong> Parallel frame extraction from multiple videos</li>
+            <li><strong>Resource Optimization:</strong> Optimal CPU utilization and memory management</li>
+          </ul>
+
+          <h3 class="title is-4">3. Video Processing Workflow</h3>
+          <ul>
+            <li><strong>Input Handling:</strong> Support for multiple video formats and sources</li>
+            <li><strong>Frame Processing:</strong> Individual frame analysis with pose detection</li>
+            <li><strong>Data Integration:</strong> Combining results from multiple video streams</li>
+            <li><strong>Output Generation:</strong> Final video with pose detection overlays</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technical Implementation. -->
+
+    <!-- Key Features. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Features</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Multi-Video Processing</h3>
+          <ul>
+            <li><strong>Parallel Processing:</strong> Handle multiple video inputs simultaneously</li>
+            <li><strong>Scalable Architecture:</strong> Easily extendable to more video sources</li>
+            <li><strong>Efficient Resource Usage:</strong> Optimized CPU and memory utilization</li>
+            <li><strong>Error Handling:</strong> Robust error management for individual video streams</li>
+          </ul>
+
+          <h3 class="title is-4">2. Pose Detection Accuracy</h3>
+          <ul>
+            <li><strong>High Precision:</strong> Accurate detection of human keypoints</li>
+            <li><strong>Robust Detection:</strong> Reliable pose estimation across various conditions</li>
+            <li><strong>Real-time Performance:</strong> Fast processing for live applications</li>
+            <li><strong>Quality Assurance:</strong> Validation of pose detection results</li>
+          </ul>
+
+          <h3 class="title is-4">3. Output Generation</h3>
+          <ul>
+            <li><strong>Visual Overlays:</strong> Pose detection visualization on video frames</li>
+            <li><strong>Combined Output:</strong> Merged results from multiple video sources</li>
+            <li><strong>Format Flexibility:</strong> Support for various output video formats</li>
+            <li><strong>Quality Preservation:</strong> Maintain video quality in output</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Key Features. -->
+
+    <!-- Performance & Results. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Performance & Results</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Processing Speed:</strong> Significant improvement through multi-threading</li>
+            <li><strong>Accuracy:</strong> High precision pose detection using mmpose API</li>
+            <li><strong>Scalability:</strong> Efficient handling of multiple video streams</li>
+            <li><strong>Resource Efficiency:</strong> Optimal utilization of system resources</li>
+            <li><strong>Output Quality:</strong> High-quality final video with pose overlays</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Performance & Results. -->
+
+    <!-- Technologies Used. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technologies & Skills</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Computer Vision:</strong> mmpose, mmdet, OpenCV, Pose estimation</li>
+            <li><strong>Python Programming:</strong> Multi-threading, Concurrent processing</li>
+            <li><strong>Video Processing:</strong> Frame extraction, Video manipulation</li>
+            <li><strong>Performance Optimization:</strong> Thread management, Resource allocation</li>
+            <li><strong>API Integration:</strong> OpenMMLab frameworks, External libraries</li>
+            <li><strong>Data Processing:</strong> Frame analysis, Result integration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technologies Used. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://zubair-hasan.github.io">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/mdzh10" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html> 

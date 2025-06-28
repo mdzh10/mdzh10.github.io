@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="App-based Bangla Book Reader System for The Blind - Undergraduate Capstone Project with Android app and hardware components.">
+  <meta name="keywords" content="Bangla OCR, Text-to-Speech, Android, Computer Vision, Accessibility, Capstone Project">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App-based Bangla Book Reader System for The Blind (Capstone Project)</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Projects
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../finbot_ai_chatbot/">
+            FinBot AI Chatbot
+          </a>
+          <a class="navbar-item" href="../android_malware_detection/">
+            Android Malware Detection
+          </a>
+          <a class="navbar-item" href="../iot_covid_detection/">
+            IoT Covid Detection System
+          </a>
+          <a class="navbar-item" href="../image_compression_watermarking/">
+            Image Compression Tool
+          </a>
+          <a class="navbar-item" href="../../industry/celloscope_e_kyc/">
+            Celloscope E-KYC Pipeline
+          </a>
+          <a class="navbar-item" href="../../industry/kona_recommendation/">
+            Kona Recommendation System
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">App-based Bangla Book Reader System for The Blind</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Undergraduate Capstone Project</span>
+            <span class="author-block">Nov 2019 - Jan 2021</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Project Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-project-diagram"></i>
+                  </span>
+                  <span>Project Details</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-play"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="Bangla Book Reader System Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Accessibility Solution</span> for visually impaired users to read Bangla books through 
+        image-to-text conversion and text-to-speech synthesis.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="../../images/zubair.jpg" alt="Book Reader Interface 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="../../images/zubair.jpg" alt="Book Reader Interface 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="../../images/zubair.jpg" alt="Hardware Setup 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="../../images/zubair.jpg" alt="Hardware Setup 2" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Project Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Project Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This capstone project addresses the accessibility challenges faced by visually impaired individuals in Bangladesh 
+            who want to read Bangla books. The system combines computer vision, natural language processing, and hardware 
+            components to create a comprehensive solution for converting printed Bangla text into audible speech.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Project Overview. -->
+
+    <!-- System Architecture. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">System Architecture</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Android Mobile Application</h3>
+          <ul>
+            <li>User-friendly interface designed for visually impaired users</li>
+            <li>Camera integration for capturing book pages</li>
+            <li>Image preprocessing and optimization</li>
+            <li>Communication with backend server for processing</li>
+            <li>Audio playback of converted text</li>
+          </ul>
+
+          <h3 class="title is-4">2. Backend Server</h3>
+          <ul>
+            <li>Image processing and text extraction pipeline</li>
+            <li>Bangla OCR (Optical Character Recognition) system</li>
+            <li>Text-to-speech conversion using Google's Bangla TTS API</li>
+            <li>Audio file generation and delivery</li>
+            <li>Error handling and user feedback</li>
+          </ul>
+
+          <h3 class="title is-4">3. Hardware Components</h3>
+          <ul>
+            <li><strong>Book Stand:</strong> Stable platform for book positioning</li>
+            <li><strong>Smartphone Mount:</strong> Secure camera positioning</li>
+            <li><strong>Control Buttons:</strong> Easy navigation for visually impaired users</li>
+            <li><strong>Arduino Microcontroller:</strong> Button input processing</li>
+            <li><strong>Bluetooth Module:</strong> Wireless communication with smartphone</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ System Architecture. -->
+
+    <!-- Technical Implementation. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technical Implementation</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Bangla OCR System</h3>
+          <ul>
+            <li><strong>Dataset Creation:</strong> Built custom Bangla word dataset (no open-source data available)</li>
+            <li><strong>Word Segmentation:</strong> Used OpenCV's EAST detector for accurate word boundary detection</li>
+            <li><strong>Model Training:</strong> EfficientNetB3 architecture for word classification</li>
+            <li><strong>Accuracy:</strong> High precision in Bangla text recognition</li>
+          </ul>
+
+          <h3 class="title is-4">2. Text-to-Speech Integration</h3>
+          <ul>
+            <li><strong>API Integration:</strong> Google's Bangla Text-to-Speech API</li>
+            <li><strong>Natural Speech:</strong> High-quality Bangla pronunciation</li>
+            <li><strong>Speed Control:</strong> Adjustable playback speed for user preference</li>
+            <li><strong>Audio Format:</strong> Optimized audio files for mobile playback</li>
+          </ul>
+
+          <h3 class="title is-4">3. Hardware Integration</h3>
+          <ul>
+            <li><strong>Arduino Programming:</strong> Button input processing and Bluetooth communication</li>
+            <li><strong>Bluetooth Protocol:</strong> Reliable wireless data transmission</li>
+            <li><strong>Power Management:</strong> Efficient battery usage for portable operation</li>
+            <li><strong>Ergonomic Design:</strong> User-friendly interface for visually impaired users</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technical Implementation. -->
+
+    <!-- Workflow Process. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">System Workflow</h2>
+        <div class="content has-text-justified">
+          <ol>
+            <li><strong>Page Capture:</strong> User positions book on stand and captures image using smartphone camera</li>
+            <li><strong>Image Processing:</strong> Backend server receives image and applies preprocessing techniques</li>
+            <li><strong>Text Extraction:</strong> EAST detector segments words, EfficientNetB3 classifies Bangla text</li>
+            <li><strong>Text Processing:</strong> Extracted text is cleaned and formatted for TTS conversion</li>
+            <li><strong>Speech Synthesis:</strong> Google's Bangla TTS API converts text to natural speech</li>
+            <li><strong>Audio Delivery:</strong> Generated audio file is sent back to mobile app</li>
+            <li><strong>Playback:</strong> User listens to the converted speech through smartphone speakers</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!--/ Workflow Process. -->
+
+    <!-- Challenges & Solutions. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Challenges & Solutions</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Technical Challenges</h3>
+          <ul>
+            <li><strong>Bangla Dataset:</strong> No open-source Bangla OCR dataset available</li>
+            <li><strong>Solution:</strong> Created custom dataset with diverse Bangla text samples</li>
+            <li><strong>Text Recognition:</strong> Complex Bangla script with multiple character forms</li>
+            <li><strong>Solution:</strong> Used state-of-the-art EfficientNetB3 for robust recognition</li>
+            <li><strong>Hardware Integration:</strong> Coordinating multiple hardware components</li>
+            <li><strong>Solution:</strong> Modular design with clear communication protocols</li>
+          </ul>
+
+          <h3 class="title is-4">Accessibility Challenges</h3>
+          <ul>
+            <li><strong>User Interface:</strong> Designing for visually impaired users</li>
+            <li><strong>Solution:</strong> Audio feedback and simple button controls</li>
+            <li><strong>Book Positioning:</strong> Accurate page capture without visual feedback</li>
+            <li><strong>Solution:</strong> Physical book stand with guides and audio cues</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Challenges & Solutions. -->
+
+    <!-- Impact & Results. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Impact & Results</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Accessibility:</strong> Enables visually impaired users to read Bangla books independently</li>
+            <li><strong>Innovation:</strong> First comprehensive Bangla book reader system for the blind</li>
+            <li><strong>Technical Achievement:</strong> Custom Bangla OCR system with high accuracy</li>
+            <li><strong>Hardware Integration:</strong> Complete hardware-software solution</li>
+            <li><strong>User Experience:</strong> Intuitive interface designed for target users</li>
+            <li><strong>Scalability:</strong> Framework can be extended to other languages</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Impact & Results. -->
+
+    <!-- Technologies Used. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technologies & Skills</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Mobile Development:</strong> Android, Java, Camera API</li>
+            <li><strong>Computer Vision:</strong> OpenCV, EAST detector, Image processing</li>
+            <li><strong>Machine Learning:</strong> EfficientNetB3, Custom dataset creation</li>
+            <li><strong>Natural Language Processing:</strong> Text preprocessing, TTS integration</li>
+            <li><strong>Hardware Programming:</strong> Arduino, Bluetooth communication</li>
+            <li><strong>Backend Development:</strong> Server-side processing, API development</li>
+            <li><strong>Accessibility Design:</strong> User interface for visually impaired</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technologies Used. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://zubair-hasan.github.io">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/mdzh10" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html> 

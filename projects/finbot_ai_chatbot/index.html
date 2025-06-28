@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FinBot: AI-Powered Chatbot for Personal Finance Management - Flutter mobile app with FastAPI backend.">
+  <meta name="keywords" content="AI Chatbot, Personal Finance, Flutter, FastAPI, PostgreSQL, Machine Learning, Mobile App">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinBot: AI-Powered Chatbot for Personal Finance Management</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Projects
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../bangla_book_reader/">
+            Bangla Book Reader System
+          </a>
+          <a class="navbar-item" href="../android_malware_detection/">
+            Android Malware Detection
+          </a>
+          <a class="navbar-item" href="../iot_covid_detection/">
+            IoT Covid Detection System
+          </a>
+          <a class="navbar-item" href="../image_compression_watermarking/">
+            Image Compression Tool
+          </a>
+          <a class="navbar-item" href="../../industry/celloscope_e_kyc/">
+            Celloscope E-KYC Pipeline
+          </a>
+          <a class="navbar-item" href="../../industry/kona_recommendation/">
+            Kona Recommendation System
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">FinBot: AI-Powered Chatbot for Personal Finance Management</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Personal Project</span>
+            <span class="author-block">Aug 2024 - Dec 2024</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Project Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-project-diagram"></i>
+                  </span>
+                  <span>Project Details</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-play"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="FinBot AI Chatbot Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">AI-Powered Chatbot</span> for personal finance management with automated transaction tracking, 
+        budget monitoring, and receipt-based expense categorization with >90% accuracy.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="../../images/zubair.jpg" alt="FinBot Interface 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="../../images/zubair.jpg" alt="FinBot Interface 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="../../images/zubair.jpg" alt="FinBot Interface 3" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="../../images/zubair.jpg" alt="FinBot Interface 4" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Project Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Project Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            FinBot is an AI-powered mobile application designed to revolutionize personal finance management through 
+            intelligent automation and natural language processing. The system provides users with a conversational 
+            interface to track expenses, monitor budgets, and gain insights into their financial patterns.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Project Overview. -->
+
+    <!-- Key Features. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Features</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Automated Transaction Tracking</h3>
+          <ul>
+            <li>Intelligent parsing of bank statements and transaction data</li>
+            <li>Automatic categorization of expenses and income</li>
+            <li>Real-time transaction monitoring and alerts</li>
+            <li>Integration with multiple financial institutions</li>
+          </ul>
+
+          <h3 class="title is-4">2. Budget Monitoring & Analysis</h3>
+          <ul>
+            <li>Smart budget creation and tracking</li>
+            <li>Expense pattern analysis and insights</li>
+            <li>Budget vs. actual spending comparisons</li>
+            <li>Predictive spending forecasts</li>
+          </ul>
+
+          <h3 class="title is-4">3. Receipt-Based Expense Categorization</h3>
+          <ul>
+            <li>OCR-based receipt scanning and data extraction</li>
+            <li>AI-powered expense categorization with >90% accuracy</li>
+            <li>Automatic merchant and item recognition</li>
+            <li>Receipt storage and organization</li>
+          </ul>
+
+          <h3 class="title is-4">4. Interactive Plot Generation</h3>
+          <ul>
+            <li>Natural language query processing for data visualization</li>
+            <li>Dynamic chart and graph generation from user prompts</li>
+            <li>Customizable financial dashboards</li>
+            <li>Export capabilities for reports and analysis</li>
+          </ul>
+
+          <h3 class="title is-4">5. AI Chatbot Interface</h3>
+          <ul>
+            <li>Natural language processing for user queries</li>
+            <li>Conversational financial advice and insights</li>
+            <li>Voice-to-text and text-to-voice capabilities</li>
+            <li>Personalized financial recommendations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Key Features. -->
+
+    <!-- Technical Architecture. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technical Architecture</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Frontend (Mobile App)</h3>
+          <ul>
+            <li><strong>Framework:</strong> Flutter for cross-platform mobile development</li>
+            <li><strong>UI/UX:</strong> Material Design with custom financial-themed components</li>
+            <li><strong>State Management:</strong> Provider pattern for app state management</li>
+            <li><strong>Local Storage:</strong> SQLite for offline data storage</li>
+          </ul>
+
+          <h3 class="title is-4">Backend (API Server)</h3>
+          <ul>
+            <li><strong>Framework:</strong> FastAPI for high-performance API development</li>
+            <li><strong>Database:</strong> PostgreSQL for relational data storage</li>
+            <li><strong>Authentication:</strong> JWT-based user authentication</li>
+            <li><strong>API Documentation:</strong> Auto-generated Swagger/OpenAPI docs</li>
+          </ul>
+
+          <h3 class="title is-4">AI/ML Components</h3>
+          <ul>
+            <li><strong>NLP:</strong> Natural language processing for chatbot interactions</li>
+            <li><strong>Computer Vision:</strong> OCR for receipt processing</li>
+            <li><strong>Machine Learning:</strong> Expense categorization models</li>
+            <li><strong>Data Analysis:</strong> Financial pattern recognition algorithms</li>
+          </ul>
+
+          <h3 class="title is-4">DevOps & Deployment</h3>
+          <ul>
+            <li><strong>Containerization:</strong> Docker for consistent deployment</li>
+            <li><strong>Cloud Platform:</strong> Google Cloud Platform (GCP)</li>
+            <li><strong>CI/CD:</strong> Automated deployment pipelines</li>
+            <li><strong>Performance:</strong> 50% reduction in deployment time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technical Architecture. -->
+
+    <!-- Development Process. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Development Process</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Agile Methodology:</strong> Iterative development with regular sprints</li>
+            <li><strong>Project Management:</strong> Kanban board for task tracking and workflow management</li>
+            <li><strong>Version Control:</strong> Git with feature branch workflow</li>
+            <li><strong>Testing:</strong> Unit tests, integration tests, and user acceptance testing</li>
+            <li><strong>Documentation:</strong> Comprehensive API documentation and user guides</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Development Process. -->
+
+    <!-- Technologies Used. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technologies & Skills</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Mobile Development:</strong> Flutter, Dart, Material Design</li>
+            <li><strong>Backend Development:</strong> FastAPI, Python, PostgreSQL</li>
+            <li><strong>AI/ML:</strong> Natural Language Processing, Computer Vision, OCR</li>
+            <li><strong>DevOps:</strong> Docker, GCP, CI/CD, Git</li>
+            <li><strong>Data Analysis:</strong> Pandas, NumPy, Matplotlib, Plotly</li>
+            <li><strong>Project Management:</strong> Agile, Kanban, Jira</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technologies Used. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://zubair-hasan.github.io">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/mdzh10" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html> 

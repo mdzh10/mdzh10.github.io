@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A Robust CNN Framework with Dual Feedback Feature Accumulation for Detecting Pneumonia Opacity from Chest X-ray Images.">
+  <meta name="keywords" content="Pneumonia Detection, Deep Learning, Computer Vision, Medical AI, Chest X-ray">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Robust CNN Framework with Dual Feedback Feature Accumulation for Detecting Pneumonia Opacity from Chest X-ray Images</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../skin_cancer_edgenextsac/">
+            Skin Cancer Detection
+          </a>
+          <a class="navbar-item" href="../recsys_review/">
+            E-Commerce Recommendation Systems
+          </a>
+          <a class="navbar-item" href="../vehicle_yolov5/">
+            Vehicle Detection YOLOv5
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">A Robust CNN Framework with Dual Feedback Feature Accumulation for Detecting Pneumonia Opacity from Chest X-ray Images</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Md. Jahin Alam</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Shams Nafisa Ali</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a><sup>3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Department of Electrical and Electronic Engineering, Bangladesh University of Engineering and Technology,</span>
+            <span class="author-block"><sup>2</sup>Department of Biomedical Engineering, Bangladesh University of Engineering and Technology,</span>
+            <span class="author-block"><sup>3</sup>Department of Computer Science and Engineering, Military Institute of Science and Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2103.14461"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2103.14461"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="Pneumonia Detection Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Robust CNN Framework</span> with Dual Feedback feature accumulation for 
+        automated pneumonia detection from chest X-ray images.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="../../images/zubair.jpg" alt="Pneumonia Detection Result 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="../../images/zubair.jpg" alt="Pneumonia Detection Result 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="../../images/zubair.jpg" alt="Pneumonia Detection Result 3" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="../../images/zubair.jpg" alt="Pneumonia Detection Result 4" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-blueshirt">
+          <img src="../../images/zubair.jpg" alt="Pneumonia Detection Result 5" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-mask">
+          <img src="../../images/zubair.jpg" alt="Pneumonia Detection Result 6" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-coffee">
+          <img src="../../images/zubair.jpg" alt="Pneumonia Detection Result 7" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-coffee">
+          <img src="../../images/zubair.jpg" alt="Pneumonia Detection Result 8" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Pneumonia is one of the most acute respiratory diseases having remarkably high prevalence and mortality rate. 
+            Chest X-ray (CXR) has been widely utilized for the diagnosis of this disease owing to its availability, 
+            diagnostic speed and accuracy. However, even for an expert radiologist, it is quite challenging to readily 
+            determine pneumonia opacity by examining CXRs. Therefore, this study has been structured to automate the 
+            pneumonia detection process by introducing a robust deep learning framework. The proposed network comprises 
+            of Process Convolution (Pro_Conv) blocks for feature accumulation inside Dual Feedback (DF) blocks to 
+            propagate the feature maps towards a viable detection. Experimental analysis showcase: (1) the proposed 
+            network proficiently distinguishes between normal and pneumonia opacity containing CXRs with the mean 
+            accuracy, sensitivity and specificity of 97.78%, 98.84% and 95.04%, respectively; (2) the network is 
+            constructed with significantly low parameters than the traditional ImageNets to reduce memory consumption 
+            for deployment in memory constrained mobile platforms; (3) the trade-off between accuracy and number of 
+            parameters of the model outperforms the considered classical networks by a remarkable margin; and (4) 
+            the false-negatives are lower than the false-positives (both of which are low in count) which prove 
+            the model's low-fatality prediction. Hence, the proposed network can be deployed for a rapid screening 
+            of pneumonia and can act as a great assistive tool for the radiologists in the diagnosis process.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/placeholder"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{alam2021robust,
+  title={A Robust CNN Framework with Dual Feedback Feature Accumulation for Detecting Pneumonia Opacity from Chest X-ray Images},
+  author={Alam, Md. Jahin and Ali, Shams Nafisa and Hasan, Muhammad Zubair},
+  journal={arXiv preprint arXiv:2103.14461},
+  year={2020}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/abs/2103.14461">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/mdzh10" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html> 

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Designing a Social Website for Mentally Challenged People - SADD course project with accessibility features.">
+  <meta name="keywords" content="Social Website, Accessibility, Mental Health, System Design, UI/UX, Course Project">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Designing a Social Website for Mentally Challenged People</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Projects
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../finbot_ai_chatbot/">
+            FinBot AI Chatbot
+          </a>
+          <a class="navbar-item" href="../bangla_book_reader/">
+            Bangla Book Reader System
+          </a>
+          <a class="navbar-item" href="../android_malware_detection/">
+            Android Malware Detection
+          </a>
+          <a class="navbar-item" href="../iot_covid_detection/">
+            IoT Covid Detection System
+          </a>
+          <a class="navbar-item" href="../image_compression_watermarking/">
+            Image Compression Tool
+          </a>
+          <a class="navbar-item" href="../mobile_rental_plan_detection/">
+            Mobile Rental Plan Detection
+          </a>
+          <a class="navbar-item" href="../national_disaster_management/">
+            National Disaster Management
+          </a>
+          <a class="navbar-item" href="../among_us_3d_animation/">
+            Among Us 3D Animation
+          </a>
+          <a class="navbar-item" href="../2d_pose_detection/">
+            2D Pose Detection
+          </a>
+          <a class="navbar-item" href="../../industry/celloscope_e_kyc/">
+            Celloscope E-KYC Pipeline
+          </a>
+          <a class="navbar-item" href="../../industry/kona_recommendation/">
+            Kona Recommendation System
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Designing a Social Website for Mentally Challenged People</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Course Project - System Analysis, Design & Development (SADD)</span>
+            <span class="author-block">Feb 2020 - July 2020</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Project Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-project-diagram"></i>
+                  </span>
+                  <span>Project Details</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-play"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="Social Website for Mentally Challenged People Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Accessibility-Focused Social Platform</span> designed specifically for mentally challenged individuals 
+        with features like emergency help, restricted internet access, and expert consultation sessions.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="../../images/zubair.jpg" alt="Website Interface 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="../../images/zubair.jpg" alt="Website Interface 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="../../images/zubair.jpg" alt="Context Diagram 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="../../images/zubair.jpg" alt="Context Diagram 2" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Project Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Project Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This project was part of the System Analysis, Design & Development (SADD) course, focusing on creating 
+            a comprehensive social website specifically designed for mentally challenged individuals. The platform 
+            prioritizes accessibility, safety, and support while providing essential social networking features.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Project Overview. -->
+
+    <!-- Key Features. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Features</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Emergency Help System</h3>
+          <ul>
+            <li><strong>24/7 Emergency Contact:</strong> Immediate access to emergency services</li>
+            <li><strong>One-Click Help:</strong> Simplified emergency button for quick assistance</li>
+            <li><strong>Location Sharing:</strong> Automatic location sharing with emergency contacts</li>
+            <li><strong>Caregiver Alerts:</strong> Instant notification to designated caregivers</li>
+          </ul>
+
+          <h3 class="title is-4">2. Restricted Internet Access</h3>
+          <ul>
+            <li><strong>Content Filtering:</strong> Safe browsing with inappropriate content blocking</li>
+            <li><strong>Time Management:</strong> Controlled internet usage with time limits</li>
+            <li><strong>Whitelist System:</strong> Pre-approved safe websites and content</li>
+            <li><strong>Parental Controls:</strong> Caregiver oversight of online activities</li>
+          </ul>
+
+          <h3 class="title is-4">3. Communication Features</h3>
+          <ul>
+            <li><strong>Video Calls:</strong> Face-to-face communication with family and friends</li>
+            <li><strong>Message Sending:</strong> Text-based messaging with simplified interface</li>
+            <li><strong>File Sharing:</strong> Safe sharing of photos and documents</li>
+            <li><strong>Location Sharing:</strong> Share location with trusted contacts</li>
+          </ul>
+
+          <h3 class="title is-4">4. Expert Consultation</h3>
+          <ul>
+            <li><strong>Discussion Sessions:</strong> Group sessions with mental health professionals</li>
+            <li><strong>Individual Consultations:</strong> One-on-one sessions with psychiatrists/psychologists</li>
+            <li><strong>Resource Library:</strong> Educational materials and coping strategies</li>
+            <li><strong>Progress Tracking:</strong> Monitor mental health progress over time</li>
+          </ul>
+
+          <h3 class="title is-4">5. Accessibility Features</h3>
+          <ul>
+            <li><strong>Simple Navigation:</strong> Intuitive and easy-to-use interface</li>
+            <li><strong>Large Text Options:</strong> Adjustable font sizes for better readability</li>
+            <li><strong>Color Contrast:</strong> High contrast themes for visual accessibility</li>
+            <li><strong>Voice Commands:</strong> Voice-activated features for hands-free operation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Key Features. -->
+
+    <!-- System Design. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">System Design & Analysis</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Context Diagrams</h3>
+          <ul>
+            <li><strong>System Boundaries:</strong> Clear definition of system scope and interactions</li>
+            <li><strong>External Entities:</strong> Identification of users, caregivers, and service providers</li>
+            <li><strong>Data Flows:</strong> Mapping of information exchange between system components</li>
+            <li><strong>Process Modeling:</strong> Detailed workflow analysis for each feature</li>
+          </ul>
+
+          <h3 class="title is-4">2. User Interface Design</h3>
+          <ul>
+            <li><strong>Wireframes:</strong> Low-fidelity UI sketches for layout planning</li>
+            <li><strong>Prototypes:</strong> Interactive mockups for user testing</li>
+            <li><strong>User Experience:</strong> Focus on simplicity and ease of use</li>
+            <li><strong>Accessibility Guidelines:</strong> WCAG compliance for inclusive design</li>
+          </ul>
+
+          <h3 class="title is-4">3. Workflow Analysis</h3>
+          <ul>
+            <li><strong>User Journeys:</strong> Step-by-step user interaction flows</li>
+            <li><strong>Error Handling:</strong> Graceful error recovery and user guidance</li>
+            <li><strong>Safety Protocols:</strong> Emergency response procedures</li>
+            <li><strong>Data Security:</strong> Privacy protection and secure communication</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ System Design. -->
+
+    <!-- Technical Implementation. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technical Implementation</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Frontend Development</h3>
+          <ul>
+            <li><strong>Responsive Design:</strong> Mobile-first approach for accessibility</li>
+            <li><strong>Progressive Web App:</strong> Offline functionality and app-like experience</li>
+            <li><strong>Accessibility Framework:</strong> ARIA labels and keyboard navigation</li>
+            <li><strong>Custom UI Components:</strong> Specialized components for target users</li>
+          </ul>
+
+          <h3 class="title is-4">2. Backend Architecture</h3>
+          <ul>
+            <li><strong>User Management:</strong> Secure authentication and authorization</li>
+            <li><strong>Content Filtering:</strong> AI-powered inappropriate content detection</li>
+            <li><strong>Real-time Communication:</strong> WebSocket-based messaging and video calls</li>
+            <li><strong>Emergency System:</strong> High-priority emergency response handling</li>
+          </ul>
+
+          <h3 class="title is-4">3. Security & Privacy</h3>
+          <ul>
+            <li><strong>Data Encryption:</strong> End-to-end encryption for sensitive communications</li>
+            <li><strong>Privacy Controls:</strong> Granular privacy settings for user data</li>
+            <li><strong>Audit Logging:</strong> Comprehensive activity tracking for safety</li>
+            <li><strong>Compliance:</strong> HIPAA and other relevant privacy regulations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technical Implementation. -->
+
+    <!-- Course Integration. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Course Integration</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">System Analysis, Design & Development (SADD)</h3>
+          <ul>
+            <li><strong>Requirements Analysis:</strong> Comprehensive stakeholder needs assessment</li>
+            <li><strong>System Design:</strong> Architecture and component design</li>
+            <li><strong>Development Methodology:</strong> Agile development with iterative design</li>
+            <li><strong>Testing & Validation:</strong> User acceptance testing with target audience</li>
+            <li><strong>Documentation:</strong> Complete system documentation and user guides</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Course Integration. -->
+
+    <!-- Impact & Results. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Impact & Results</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Accessibility Innovation:</strong> Pioneering approach to inclusive social networking</li>
+            <li><strong>Safety Enhancement:</strong> Comprehensive emergency response system</li>
+            <li><strong>Social Inclusion:</strong> Enabling meaningful social connections</li>
+            <li><strong>Professional Support:</strong> Direct access to mental health professionals</li>
+            <li><strong>Educational Value:</strong> Comprehensive system design documentation</li>
+            <li><strong>Real-world Application:</strong> Practical solution for a critical need</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Impact & Results. -->
+
+    <!-- Technologies Used. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technologies & Skills</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>System Analysis:</strong> Requirements gathering, Use case modeling</li>
+            <li><strong>UI/UX Design:</strong> Wireframing, Prototyping, Accessibility design</li>
+            <li><strong>Web Development:</strong> Frontend frameworks, Backend architecture</li>
+            <li><strong>Security:</strong> Data encryption, Privacy protection, Access control</li>
+            <li><strong>Communication:</strong> Real-time messaging, Video calling, File sharing</li>
+            <li><strong>Project Management:</strong> Agile methodology, Documentation, Testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technologies Used. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://zubair-hasan.github.io">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/mdzh10" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html> 

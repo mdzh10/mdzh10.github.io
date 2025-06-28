@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Automated E-KYC Pipeline with Face Recognition and Liveness Detection at Celloscope Ltd.">
+  <meta name="keywords" content="E-KYC, Face Recognition, Liveness Detection, Computer Vision, AI, Identity Verification">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automated E-KYC Pipeline with Face Recognition and Liveness Detection</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Projects
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../kona_recommendation/">
+            Kona Recommendation System
+          </a>
+          <a class="navbar-item" href="../../publications/skin_cancer_edgenextsac/">
+            Skin Cancer Detection
+          </a>
+          <a class="navbar-item" href="../../publications/recsys_review/">
+            E-Commerce Recommendation Systems
+          </a>
+          <a class="navbar-item" href="../../publications/vehicle_yolov5/">
+            Vehicle Detection YOLOv5
+          </a>
+          <a class="navbar-item" href="../../publications/Pneumonia_CXR_Det/">
+            Pneumonia Detection
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Automated E-KYC Pipeline with Face Recognition and Liveness Detection</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Data Scientist, Celloscope Ltd</span>
+            <span class="author-block">Dec 2022 - July 2024</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Project Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-project-diagram"></i>
+                  </span>
+                  <span>Project Details</span>
+                </a>
+              </span>
+              <!-- Company Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-building"></i>
+                  </span>
+                  <span>Company</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="E-KYC Pipeline Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Automated E-KYC Pipeline</span> with NIST-compliant facial recognition, 
+        video liveness detection, and National ID extraction services.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="../../images/zubair.jpg" alt="E-KYC Pipeline Result 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="../../images/zubair.jpg" alt="E-KYC Pipeline Result 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="../../images/zubair.jpg" alt="E-KYC Pipeline Result 3" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="../../images/zubair.jpg" alt="E-KYC Pipeline Result 4" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Project Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Project Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            As a Data Scientist at Celloscope Ltd, I developed a comprehensive automated e-KYC (Electronic Know Your Customer) 
+            pipeline that revolutionized the identity verification process. The system integrates multiple AI-powered components 
+            to provide a seamless and secure user verification experience.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Project Overview. -->
+
+    <!-- Key Components. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Components</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Face Recognition & Matching</h3>
+          <ul>
+            <li>Developed NIST-compliant facial recognition solution</li>
+            <li>Implemented advanced face matching algorithms for identity verification</li>
+            <li>Ensured high accuracy and low false positive rates</li>
+          </ul>
+
+          <h3 class="title is-4">2. Video Liveness Detection</h3>
+          <ul>
+            <li>Built sophisticated video-based liveness detection system</li>
+            <li>Prevented spoofing attacks using deep learning models</li>
+            <li>Real-time processing with high accuracy</li>
+          </ul>
+
+          <h3 class="title is-4">3. National ID (NID) Information Extraction</h3>
+          <ul>
+            <li>Automated extraction of information from National ID documents</li>
+            <li>OCR and computer vision techniques for data extraction</li>
+            <li>Validation and verification of extracted information</li>
+          </ul>
+
+          <h3 class="title is-4">4. System Architecture & Deployment</h3>
+          <ul>
+            <li>Developed APIs using FastAPI framework</li>
+            <li>Containerized services using Docker</li>
+            <li>Implemented CI/CD pipeline for automated deployment</li>
+            <li>Improved service RPS (Requests Per Second) by 36% using model quantization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Key Components. -->
+
+    <!-- Impact & Results. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Impact & Results</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>80% reduction</strong> in manual verification time</li>
+            <li><strong>500,000+ users</strong> currently served by the system</li>
+            <li><strong>NIST compliance</strong> for facial recognition accuracy</li>
+            <li><strong>36% improvement</strong> in service RPS through model optimization</li>
+            <li><strong>Scalable architecture</strong> supporting high-volume processing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Impact & Results. -->
+
+    <!-- Technologies Used. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technologies & Skills</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Computer Vision:</strong> OpenCV, TensorFlow, PyTorch</li>
+            <li><strong>Face Recognition:</strong> Deep learning models, NIST compliance</li>
+            <li><strong>Backend Development:</strong> FastAPI, Python</li>
+            <li><strong>DevOps:</strong> Docker, CI/CD, Bash scripting</li>
+            <li><strong>Model Optimization:</strong> Quantization, performance tuning</li>
+            <li><strong>Document Processing:</strong> OCR, information extraction</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technologies Used. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://zubair-hasan.github.io">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/mdzh10" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html> 

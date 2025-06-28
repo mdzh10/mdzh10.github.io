@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Image Compression and Watermarking Tool Using Java - Personal project demonstrating fundamental image processing techniques.">
+  <meta name="keywords" content="Image Processing, Java, Compression, Watermarking, Software Development">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Compression and Watermarking Tool Using Java</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Projects
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../finbot_ai_chatbot/">
+            FinBot AI Chatbot
+          </a>
+          <a class="navbar-item" href="../bangla_book_reader/">
+            Bangla Book Reader System
+          </a>
+          <a class="navbar-item" href="../android_malware_detection/">
+            Android Malware Detection
+          </a>
+          <a class="navbar-item" href="../iot_covid_detection/">
+            IoT Covid Detection System
+          </a>
+          <a class="navbar-item" href="../../industry/celloscope_e_kyc/">
+            Celloscope E-KYC Pipeline
+          </a>
+          <a class="navbar-item" href="../../industry/kona_recommendation/">
+            Kona Recommendation System
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Image Compression and Watermarking Tool Using Java</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Personal Project</span>
+            <span class="author-block">July 2018 - Nov 2018</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Project Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-project-diagram"></i>
+                  </span>
+                  <span>Project Details</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-play"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="Image Compression Tool Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Java-based Image Processing Tool</span> for compression and watermarking, 
+        demonstrating fundamental image processing techniques and software development skills.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="../../images/zubair.jpg" alt="Image Compression Results 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="../../images/zubair.jpg" alt="Image Compression Results 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="../../images/zubair.jpg" alt="Watermarking Results 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="../../images/zubair.jpg" alt="Watermarking Results 2" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Project Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Project Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This comprehensive Java-based image processing tool implements both lossless and lossy image compression 
+            techniques along with advanced steganography watermarking. The project demonstrates deep understanding 
+            of image processing algorithms including run-length encoding, DPCM, predictive encoding, entropy encoding, 
+            Huffman encoding, Discrete Cosine Transform (DCT), wavelet transform, and steganographic watermarking.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Project Overview. -->
+
+    <!-- Core Features. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Core Features</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Lossless Image Compression</h3>
+          <ul>
+            <li><strong>Run Length Encoding (RLE):</strong> Efficient compression for images with repeated pixel values</li>
+            <li><strong>Differential Pulse Code Modulation (DPCM):</strong> Predictive encoding for reducing redundancy</li>
+            <li><strong>Predictive Encoding:</strong> Advanced prediction algorithms for pixel value estimation</li>
+            <li><strong>Entropy Encoding:</strong> Statistical compression based on symbol frequency</li>
+            <li><strong>Huffman Encoding:</strong> Variable-length coding for optimal compression ratios</li>
+          </ul>
+
+          <h3 class="title is-4">2. Lossy Image Compression</h3>
+          <ul>
+            <li><strong>Discrete Cosine Transform (DCT):</strong> Frequency domain transformation for compression</li>
+            <li><strong>Wavelet Transform:</strong> Multi-resolution analysis for image compression</li>
+            <li><strong>Quantization:</strong> Controlled quality reduction for size optimization</li>
+            <li><strong>Compression Ratio Control:</strong> Adjustable compression levels with quality trade-offs</li>
+          </ul>
+
+          <h3 class="title is-4">3. Steganography Watermarking</h3>
+          <ul>
+            <li><strong>Image Encoding:</strong> Hidden data embedding in image pixels</li>
+            <li><strong>LSB (Least Significant Bit) Steganography:</strong> Bit-level data hiding</li>
+            <li><strong>Frequency Domain Watermarking:</strong> DCT-based steganographic techniques</li>
+            <li><strong>Robustness Features:</strong> Watermark resistance to common image processing</li>
+          </ul>
+
+          <h3 class="title is-4">4. User Interface</h3>
+          <ul>
+            <li><strong>Graphical Interface:</strong> User-friendly Java Swing application</li>
+            <li><strong>Algorithm Selection:</strong> Choose between different compression and watermarking methods</li>
+            <li><strong>Real-time Preview:</strong> Live preview of compression and watermarking effects</li>
+            <li><strong>Quality Metrics:</strong> PSNR and compression ratio analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Core Features. -->
+
+    <!-- Technical Implementation. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technical Implementation</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Lossless Compression Algorithms</h3>
+          <ul>
+            <li><strong>Run Length Encoding:</strong> Sequential compression of repeated pixel values</li>
+            <li><strong>DPCM Implementation:</strong> Difference-based encoding for spatial redundancy reduction</li>
+            <li><strong>Predictive Encoding:</strong> Linear and non-linear prediction models</li>
+            <li><strong>Entropy Calculation:</strong> Shannon entropy computation for optimal encoding</li>
+            <li><strong>Huffman Tree Construction:</strong> Dynamic Huffman coding for variable-length compression</li>
+          </ul>
+
+          <h3 class="title is-4">2. Lossy Compression Techniques</h3>
+          <ul>
+            <li><strong>DCT Implementation:</strong> 2D Discrete Cosine Transform for frequency domain analysis</li>
+            <li><strong>Wavelet Decomposition:</strong> Multi-level wavelet transform using various wavelet families</li>
+            <li><strong>Quantization Matrix:</strong> JPEG-style quantization for quality control</li>
+            <li><strong>Inverse Transform:</strong> Reconstruction algorithms for decompression</li>
+          </ul>
+
+          <h3 class="title is-4">3. Steganography Implementation</h3>
+          <ul>
+            <li><strong>LSB Embedding:</strong> Least significant bit manipulation for data hiding</li>
+            <li><strong>DCT Domain Steganography:</strong> Frequency domain data embedding</li>
+            <li><strong>Watermark Extraction:</strong> Robust algorithms for hidden data recovery</li>
+            <li><strong>Capacity Analysis:</strong> Maximum data embedding capacity calculation</li>
+          </ul>
+
+          <h3 class="title is-4">4. Software Architecture</h3>
+          <ul>
+            <li><strong>Modular Design:</strong> Separate modules for each compression and watermarking technique</li>
+            <li><strong>Algorithm Factory:</strong> Design pattern for algorithm selection and instantiation</li>
+            <li><strong>Memory Management:</strong> Efficient handling of large image files</li>
+            <li><strong>Error Handling:</strong> Robust exception handling for algorithm failures</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technical Implementation. -->
+
+    <!-- Development Process. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Development Process</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Algorithm Research & Implementation</h3>
+          <ul>
+            <li>Study of lossless compression techniques (RLE, DPCM, Huffman)</li>
+            <li>Implementation of lossy compression algorithms (DCT, Wavelet)</li>
+            <li>Research on steganography and watermarking methods</li>
+            <li>Performance analysis and optimization of each algorithm</li>
+          </ul>
+
+          <h3 class="title is-4">2. Integration & Testing</h3>
+          <ul>
+            <li>Integration of multiple compression and watermarking techniques</li>
+            <li>Comprehensive testing with various image types and sizes</li>
+            <li>Quality assessment using PSNR and visual comparison</li>
+            <li>Performance benchmarking and optimization</li>
+          </ul>
+
+          <h3 class="title is-4">3. User Interface Development</h3>
+          <ul>
+            <li>Design of intuitive interface for algorithm selection</li>
+            <li>Implementation of real-time preview functionality</li>
+            <li>Integration of quality metrics and analysis tools</li>
+            <li>User testing and interface refinement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Development Process. -->
+
+    <!-- Results & Performance. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results & Performance</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Lossless Compression:</strong> Achieved significant compression ratios using RLE, DPCM, and Huffman encoding</li>
+            <li><strong>Lossy Compression:</strong> High compression ratios with DCT and wavelet transforms while maintaining quality</li>
+            <li><strong>Steganography Success:</strong> Reliable data embedding and extraction using LSB and DCT techniques</li>
+            <li><strong>Algorithm Performance:</strong> Efficient implementation of multiple compression and watermarking algorithms</li>
+            <li><strong>Quality Preservation:</strong> Maintained acceptable image quality across different compression levels</li>
+            <li><strong>Robust Watermarking:</strong> Watermarks resistant to common image processing operations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Results & Performance. -->
+
+    <!-- Technologies Used. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technologies & Skills</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Programming Language:</strong> Java, Object-Oriented Programming</li>
+            <li><strong>Lossless Compression:</strong> RLE, DPCM, Predictive Encoding, Entropy Encoding, Huffman Encoding</li>
+            <li><strong>Lossy Compression:</strong> DCT, Wavelet Transform, Quantization</li>
+            <li><strong>Steganography:</strong> LSB Embedding, DCT Domain Watermarking, Data Hiding</li>
+            <li><strong>Image Processing:</strong> Pixel manipulation, Color space conversion, Quality metrics</li>
+            <li><strong>GUI Development:</strong> Java Swing, User interface design</li>
+            <li><strong>Software Design:</strong> Design patterns, Modular architecture, Algorithm optimization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technologies Used. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://zubair-hasan.github.io">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/mdzh10" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html> 

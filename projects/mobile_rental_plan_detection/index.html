@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Mobile Rental Plan Detection - ADL Pre-Hackathon project using LightGBM and XGBoost for multi-class classification.">
+  <meta name="keywords" content="Machine Learning, Classification, LightGBM, XGBoost, Feature Engineering, Hackathon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Rental Plan Detection (ADL Pre-Hackathon)</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/bulma.min.css">
+  <link rel="stylesheet" href="../../css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../../css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../../css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../../css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../../js/fontawesome.all.min.js"></script>
+  <script src="../../js/bulma-carousel.min.js"></script>
+  <script src="../../js/bulma-slider.min.js"></script>
+  <script src="../../js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://zubair-hasan.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Projects
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="../finbot_ai_chatbot/">
+            FinBot AI Chatbot
+          </a>
+          <a class="navbar-item" href="../bangla_book_reader/">
+            Bangla Book Reader System
+          </a>
+          <a class="navbar-item" href="../android_malware_detection/">
+            Android Malware Detection
+          </a>
+          <a class="navbar-item" href="../iot_covid_detection/">
+            IoT Covid Detection System
+          </a>
+          <a class="navbar-item" href="../image_compression_watermarking/">
+            Image Compression Tool
+          </a>
+          <a class="navbar-item" href="../social_website_mentally_challenged/">
+            Social Website for Mentally Challenged
+          </a>
+          <a class="navbar-item" href="../national_disaster_management/">
+            National Disaster Management
+          </a>
+          <a class="navbar-item" href="../among_us_3d_animation/">
+            Among Us 3D Animation
+          </a>
+          <a class="navbar-item" href="../2d_pose_detection/">
+            2D Pose Detection
+          </a>
+          <a class="navbar-item" href="../../industry/celloscope_e_kyc/">
+            Celloscope E-KYC Pipeline
+          </a>
+          <a class="navbar-item" href="../../industry/kona_recommendation/">
+            Kona Recommendation System
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Mobile Rental Plan Detection (ADL Pre-Hackathon)</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://zubair-hasan.github.io">Muhammad Zubair Hasan</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Hackathon Project</span>
+            <span class="author-block">September 2021</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Project Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-project-diagram"></i>
+                  </span>
+                  <span>Project Details</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/mdzh10/Mobile-Rental-Plan-Detection-ADL-Pre-Hackathon-"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-play"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="../../images/zubair.jpg" alt="Mobile Rental Plan Detection Project" style="max-width: 100%; height: auto; border-radius: 10px;">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Multi-class Classification</span> for mobile rental plan detection using LightGBM and XGBoost 
+        with advanced feature engineering and model stacking techniques.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <img src="../../images/zubair.jpg" alt="Classification Results 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-chair-tp">
+          <img src="../../images/zubair.jpg" alt="Classification Results 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-shiba">
+          <img src="../../images/zubair.jpg" alt="Feature Analysis 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="item item-fullbody">
+          <img src="../../images/zubair.jpg" alt="Feature Analysis 2" style="width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Project Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Project Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            This hackathon project focused on developing a machine learning solution for mobile rental plan detection. 
+            The challenge involved multi-class classification using ensemble methods and advanced feature engineering 
+            techniques to improve prediction accuracy.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Project Overview. -->
+
+    <!-- Data Analysis. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Data Analysis & Preprocessing</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Exploratory Data Analysis (EDA)</h3>
+          <ul>
+            <li><strong>Data Understanding:</strong> Comprehensive analysis of mobile rental plan dataset</li>
+            <li><strong>Feature Distribution:</strong> Statistical analysis of all input variables</li>
+            <li><strong>Correlation Analysis:</strong> Identification of feature relationships</li>
+            <li><strong>Data Quality Assessment:</strong> Missing value and outlier detection</li>
+          </ul>
+
+          <h3 class="title is-4">2. Feature Engineering</h3>
+          <ul>
+            <li><strong>New Feature Generation:</strong> Created derived features from existing data</li>
+            <li><strong>Feature Transformation:</strong> Applied appropriate scaling and encoding</li>
+            <li><strong>Feature Selection:</strong> Identified most predictive features</li>
+            <li><strong>Domain Knowledge Integration:</strong> Incorporated business insights</li>
+          </ul>
+
+          <h3 class="title is-4">3. Class Imbalance Handling</h3>
+          <ul>
+            <li><strong>Imbalance Detection:</strong> Analyzed class distribution in target variable</li>
+            <li><strong>Sampling Techniques:</strong> Applied SMOTE or similar methods</li>
+            <li><strong>Class Weights:</strong> Adjusted model parameters for balanced training</li>
+            <li><strong>Evaluation Metrics:</strong> Used appropriate metrics for imbalanced data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Data Analysis. -->
+
+    <!-- Machine Learning Pipeline. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Machine Learning Pipeline</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">1. Model Selection</h3>
+          <ul>
+            <li><strong>LightGBM:</strong> Primary gradient boosting model for classification</li>
+            <li><strong>XGBoost:</strong> Alternative gradient boosting implementation</li>
+            <li><strong>Model Comparison:</strong> Evaluated performance across different algorithms</li>
+            <li><strong>Hyperparameter Tuning:</strong> Optimized model parameters for best performance</li>
+          </ul>
+
+          <h3 class="title is-4">2. Model Stacking</h3>
+          <ul>
+            <li><strong>Ensemble Methods:</strong> Combined multiple models for improved predictions</li>
+            <li><strong>Stacking Strategy:</strong> Used meta-learner to combine base models</li>
+            <li><strong>Cross-validation:</strong> Ensured robust model evaluation</li>
+            <li><strong>Performance Improvement:</strong> Achieved better accuracy through ensemble</li>
+          </ul>
+
+          <h3 class="title is-4">3. Feature Selection</h3>
+          <ul>
+            <li><strong>Recursive Feature Elimination:</strong> Systematic feature selection process</li>
+            <li><strong>Feature Importance Analysis:</strong> Identified most predictive features</li>
+            <li><strong>Dimensionality Reduction:</strong> Optimized feature set for model performance</li>
+            <li><strong>Model Interpretability:</strong> Enhanced understanding of feature contributions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Machine Learning Pipeline. -->
+
+    <!-- Results & Performance. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results & Performance</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Improved Accuracy:</strong> Enhanced classification performance through ensemble methods</li>
+            <li><strong>Robust Predictions:</strong> Consistent results across different data subsets</li>
+            <li><strong>Feature Insights:</strong> Clear understanding of important predictive factors</li>
+            <li><strong>Scalable Solution:</strong> Efficient model that can handle large datasets</li>
+            <li><strong>Competition Performance:</strong> Strong results in hackathon evaluation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Results & Performance. -->
+
+    <!-- Technologies Used. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Technologies & Skills</h2>
+        <div class="content has-text-justified">
+          <ul>
+            <li><strong>Machine Learning:</strong> LightGBM, XGBoost, Ensemble methods</li>
+            <li><strong>Data Analysis:</strong> Pandas, NumPy, Matplotlib, Seaborn</li>
+            <li><strong>Feature Engineering:</strong> Feature selection, Transformation, Creation</li>
+            <li><strong>Model Evaluation:</strong> Cross-validation, Performance metrics</li>
+            <li><strong>Programming:</strong> Python, Scikit-learn, Jupyter notebooks</li>
+            <li><strong>Competition Skills:</strong> Time management, Problem-solving, Teamwork</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Technologies Used. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://zubair-hasan.github.io">
+        <i class="fas fa-home"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/mdzh10" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html> 
