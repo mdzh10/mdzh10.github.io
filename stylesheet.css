@@ -237,3 +237,56 @@ span.highlight {
     margin-bottom: 0.5em;
   }
 }
+
+/* Only fix Publications and Research Projects section */
+.publication-list {
+  table-layout: fixed;
+}
+
+.publication-list tr > td:first-child {
+  width: 34% !important;
+  box-sizing: border-box;
+}
+
+.publication-list tr > td:nth-child(2) {
+  width: 66% !important;
+  box-sizing: border-box;
+}
+
+.publication-list .one {
+  width: 100%;
+  max-width: 250px;
+}
+
+.publication-list .one img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto !important;
+  object-fit: contain;
+}
+
+/* Mobile fix only for publication section */
+@media (max-width: 700px) {
+  .publication-list,
+  .publication-list tbody,
+  .publication-list tr,
+  .publication-list td {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .publication-list tr > td:first-child {
+    padding-bottom: 4px !important;
+  }
+
+  .publication-list tr > td:nth-child(2) {
+    padding: 8px 16px 16px 16px !important;
+  }
+
+  .publication-list .one {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
